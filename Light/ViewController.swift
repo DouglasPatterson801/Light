@@ -8,11 +8,24 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+var lightIsOn = true
 
+class ViewController: UIViewController {
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        updateUI()
+    }
+    
+    
+    @IBAction func buttonPressed(_ sender: Any) {
+        lightIsOn = !lightIsOn
+        updateUI()
+    }
+    
+    func updateUI() {
+        view.backgroundColor = lightIsOn ? .white : .black
     }
 
     override func didReceiveMemoryWarning() {
